@@ -1,0 +1,21 @@
+.teamBlock{
+    padding: 32px;
+    text-align: center;
+    /* background-color: #D9F7E9; */
+
+}
+.teamBlock h3{
+    border-bottom: 4px solid;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+.pokemons {
+    margin-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.input-color{
+    position: absolute;
+    right: 10px;
+}
