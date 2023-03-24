@@ -21,6 +21,8 @@ const TextSpot = (props) => {
         required={props.mandatory}
         placeholder={props.placeholder}
         value={props.value}
+        type={props.typeInput}
+        id={props.idInput}
       />
     </div>
   );

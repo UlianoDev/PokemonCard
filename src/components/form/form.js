@@ -9,6 +9,8 @@ const Form = (props) => {
   const [description, setDescription] = useState("");
   const [imagem, setImagem] = useState("");
   const [types, setTypes] = useState("");
+  const [elementName, setElementName] = useState("");
+  const [elementColor, setElementColor] = useState("");
   //const [id, setId] = useState({props.id});
 
   const whenSaved = (event) => {
@@ -23,6 +25,15 @@ const Form = (props) => {
     setDescription("");
     setImagem("");
     setTypes("");
+  };
+  const whenSubmited = (event) => {
+    event.preventDefault();
+    props.newElement({
+      name: elementName,
+      primaryColor: elementColor,
+    });
+    setElementName("");
+    setElementColor("");
   };
   return (
     <section className="form">
@@ -59,6 +70,29 @@ const Form = (props) => {
           setter={setTypes}
         />
         <Button text="Criar card" />
+      </form>
+
+      <form onSubmit={whenSubmited}>
+        <h2>Preencha os dados para criar um novo Elemento</h2>
+        <TextSpot
+          mandatory={true}
+          label="Nome"
+          placeholder="Digite o nome do novo tipo de pokemon"
+          value={elementName}
+          setter={setElementName}
+        />
+
+        <TextSpot
+          idInput="inputColor"
+          mandatory={true}
+          label="Cor"
+          placeholder="Digite a cor do novo Elemento"
+          value={elementColor}
+          setter={setElementColor}
+          typeInput="color"
+        />
+
+        <Button text="Criar elemento" />
       </form>
     </section>
   );

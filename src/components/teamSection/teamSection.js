@@ -21,13 +21,13 @@ const Team = (props) => {
         <div className="pokemons">
           {props.pokemon.map((parameter) => (
             <Pokemons
-              key={parameter.name}
+              key={parameter.idPokemon}
               cardColor={props.primaryColor}
               name={parameter.name}
               description={parameter.description}
               img={parameter.imagem}
               toDelete={props.toDelete}
-              idPokemon={props.idPokemon}
+              idPokemon={parameter.idPokemon}
             />
           ))}
         </div>

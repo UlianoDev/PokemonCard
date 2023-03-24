@@ -58,12 +58,22 @@ function App() {
   const [cards, setcards] = useState([]);
 
   const whenAdd = (newcards) => {
-    setcards([...cards, newcards]);
+    setcards((currentState) => [
+      ...currentState,
+      { ...newcards, idPokemon: uuidv4() },
+    ]);
   };
 
   const deleteCard = (id) => {
-    setcards(cards.filter((parameter) => parameter.idPokemon !== id));
-    console.log(id);
+    setcards((currentState) =>
+      currentState.filter((parameter) => parameter.idPokemon !== id)
+    );
+  };
+  const whenElementSubmit = (newElement) => {
+    setElements((currentState) => [
+      ...currentState,
+      { ...newElement, id: uuidv4() },
+    ]);
   };
 
   return (
@@ -72,6 +82,7 @@ function App() {
       <Form
         itens={elements.map((parameter) => parameter.name)}
         newCard={(newcards) => whenAdd(newcards)}
+        newElement={(newElement) => whenElementSubmit(newElement)}
       />
       {elements.map((parameter) => (
         <Team
@@ -86,7 +97,7 @@ function App() {
           //elementColor={parameter.primaryColor}
           element={parameter}
           alterColor={alterCardColor}
-          idPokemon={uuidv4}
+          // idPokemon={uuidv4()}
         />
       ))}
       <Footer />

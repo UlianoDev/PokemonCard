@@ -29,7 +29,7 @@ const Footer = () => {
         />
       </section>
       <section>
-        <p>Desenvolvido por POKIMAO.</p>
+        <p>Desenvolvido por Gabriel Uliano.</p>
       </section>
     </footer>
   );
