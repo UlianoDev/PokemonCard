@@ -42,7 +42,7 @@ const Form = (props) => {
         <TextSpot
           mandatory={true}
           label="Nome"
-          placeholder="Digite seu name"
+          placeholder="Digite o nome do pokemon"
           value={name}
           setter={setName}
         />
@@ -50,13 +50,13 @@ const Form = (props) => {
         <TextSpot
           mandatory={true}
           label="Descrição"
-          placeholder="Digite seu description"
+          placeholder="Digite a descrição do pokemon"
           value={description}
           setter={setDescription}
         />
 
         <TextSpot
-          label="Imagem"
+          label="Imagem (url)"
           placeholder="Digite o endereço da imagem"
           value={imagem}
           setter={setImagem}
